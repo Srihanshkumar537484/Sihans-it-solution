@@ -1,0 +1,31 @@
+backend:
+  name: git-gateway # Netlify Git Gateway का उपयोग करें
+  branch: main # इसे अपनी GitHub Branch के नाम से बदलें (जैसे master या main)
+
+media_folder: "assets/images/uploads" # CMS द्वारा अपलोड की गई इमेज यहाँ सेव होंगी
+public_folder: "/assets/images/uploads"
+
+collections:
+  - name: "pages"
+    label: "Website Pages"
+    files:
+      - file: "index.html"
+        label: "Home Page (Editable)"
+        name: "home"
+        fields:
+          # ये Fields YAML Front Matter से match करनी चाहिए
+          - {label: "Browser Title", name: "title", widget: "string"}
+          - {label: "Hero Section H2", name: "hero_h2", widget: "string"}
+          - {label: "Hero Section H1", name: "hero_h1", widget: "string"}
+          - {label: "Hero Paragraph", name: "hero_p", widget: "text"}
+          - {label: "Services Title", name: "services_title", widget: "string"}
+          - {label: "Services Intro", name: "services_intro", widget: "text"}
+          - {label: "Reviews Title", name: "reviews_title", widget: "string"}
+          - {label: "Reviews Subtitle", name: "reviews_subtitle", widget: "string"}
+      # आप अन्य pages (जैसे about.html) को भी ऐसे ही जोड़ सकते हैं
+      # - file: "about.html"
+      #   label: "About Me Page"
+      #   name: "about"
+      #   fields:
+      #     - {label: "Title", name: "title", widget: "string"}
+      #     - {label: "Content", name: "body", widget: "markdown"}
